@@ -6,12 +6,12 @@ theme = "lighthouse100-theme"
 
 [params]
   AuthorName = "Kunlun HUANG"
-  GitHubUser = "hkl0"
+  GitHubUser = "hkwk"
   SidebarRecentLimit = 5
   Subtitle = "Just record things."
   Comments = "Cares"
   homepageurl = "https://xou.com/"
-  IssueURL = "https://github.com/hkl0/hkl0.github.io/issues"
+  IssueURL = "https://github.com/hkwk/hkwk.github.io/issues"
   LinkedinUser = "huangkunlun"
   CVurl = "https://hkl.ac.cn"
 
