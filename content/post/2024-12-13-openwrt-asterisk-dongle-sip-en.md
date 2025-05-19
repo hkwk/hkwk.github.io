@@ -231,14 +231,14 @@ exten => +862022221234,1,Dial(IAX2/6010,60,Trg)
 
 #### Incoming Call Test
 
-![Incoming Test 1](https://cdn.jsdelivr.net/gh/hkl0/blog-photo/2019/11/ppvuess1u8.png)
+![Incoming Test 1](https://cdn.jsdelivr.net/gh/hkwk/blog-photo/2019/11/ppvuess1u8.png)
 
-![Incoming Test 2](https://cdn.jsdelivr.net/gh/hkl0/blog-photo/2019/11/bu16kf7yx3.jpeg)
+![Incoming Test 2](https://cdn.jsdelivr.net/gh/hkwk/blog-photo/2019/11/bu16kf7yx3.jpeg)
 
 #### Outgoing Call Test
 
-![Outgoing Test 1](https://cdn.jsdelivr.net/gh/hkl0/blog-photo/2019/11/r6wjvf9s6k.png)
+![Outgoing Test 1](https://cdn.jsdelivr.net/gh/hkwk/blog-photo/2019/11/r6wjvf9s6k.png)
 
-![Outgoing Test 2](https://cdn.jsdelivr.net/gh/hkl0/blog-photo/2019/11/jek9b1pyhn.jpeg)
+![Outgoing Test 2](https://cdn.jsdelivr.net/gh/hkwk/blog-photo/2019/11/jek9b1pyhn.jpeg)
 
 
