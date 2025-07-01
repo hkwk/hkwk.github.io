@@ -10,11 +10,8 @@
 <h3 align="left">Connect with me:</h3>
 <p align="left">
 </p>
-
-<h3 align="left">Languages and Tools:</h3>
-<p align="left"> <a href="https://www.w3schools.com/cs/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" alt="csharp" width="40" height="40"/> </a> <a href="https://gohugo.io/" target="_blank" rel="noreferrer"> <img src="https://api.iconify.design/logos-hugo.svg" alt="hugo" width="40" height="40"/> </a> <a href="https://kubernetes.io" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/kubernetes/kubernetes-icon.svg" alt="kubernetes" width="40" height="40"/> </a> <a href="https://www.linux.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" width="40" height="40"/> </a> <a href="https://pytorch.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/pytorch/pytorch-icon.svg" alt="pytorch" width="40" height="40"/> </a> <a href="https://www.rust-lang.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/rust/rust-plain.svg" alt="rust" width="40" height="40"/> </a> </p>
 		
-My Linkedin: [linkedin.com/in/huangkunlun](https://www.linkedin.com/in/huangkunlun)
+My Linkedin: [linkedin.com/in/huangkl](https://www.linkedin.com/in/huangkl)
 
 📧Email Address:
 
@@ -23,16 +20,16 @@ For Confidential: PGP
 ```txt
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 
-xjMEZXatbRYJKwYBBAHaRw8BAQdAPuNUw3Fmg/2G7Ia00x24csSDTsURMGxW6KWG
-QwxMmevNJWh1YW5na3VubHVuIDxodWFuZ2t1bmx1bkBvdXRsb29rLmNvbT7CjAQQ
-FgoAPgWCZXatbQQLCQcICZAQ6KHr6jtOsQMVCAoEFgACAQIZAQKbAwIeARYhBKup
-TLgyO5StxbZ8DRDooevqO06xAABgrwEA6kRIDdOn9PgdO28xsK6Zf8VKzJB3peSm
-V65sPJjvmoYA+gMU8/SoJqxbU4kB3uRik//eo61NdXk//XGyaImPRqAHzjgEZXat
-bRIKKwYBBAGXVQEFAQEHQMc7/Pjw1o2urlnjqpJMt8X2xdIc7yiRhz75bHl1yjsb
-AwEIB8J4BBgWCAAqBYJldq1tCZAQ6KHr6jtOsQKbDBYhBKupTLgyO5StxbZ8DRDo
-oevqO06xAAB0TQEA9VUeXqKQ723QWU7JNJZSJi6KfxdQS7YE838R1Dlt8rUA/3ky
-xqn5BixYejDvknm9R0WJZDmvLxQhj4ZaIboUt3cB
-=dwuX
+xjMEaGPddhYJKwYBBAHaRw8BAQdA6AeW37R2YlLMQVcGaaULNTbq+br5UrJQ
+WJa8sYJAY4fNF2R1Y2ttYWlsIDxoa2xAZHVjay5jb20+wowEEBYKAD4Fgmhj
+3XYECwkHCAmQpQCXxsl2phwDFQgKBBYAAgECGQECmwMCHgEWIQRAXhdUhaZn
+kgEyhM2lAJfGyXamHAAA6+QBANhZvCQduGEv6mVe9LrV9s6RR9Dgf8Pq6IX0
+FmgRMpY4AP9xAblMjh7+yCahvaNrvGd6SdwHSVpRb0cF1NdMgkd0C844BGhj
+3XYSCisGAQQBl1UBBQEBB0B+0XMIilxXwdqGFxWZVRPsExhEsyu9YaqbPtzJ
+7co6FwMBCAfCeAQYFgoAKgWCaGPddgmQpQCXxsl2phwCmwwWIQRAXhdUhaZn
+kgEyhM2lAJfGyXamHAAAg9kBAPtVXkI+YpJnc8rN6xXcA8IYT1g+DRiNS3uR
+QaXYjVnzAQD2o1p0LGy6sJwdKxIPG9AdkRjtZDILjEFbXah5Uaa1Aw==
+=/GKd
 -----END PGP PUBLIC KEY BLOCK-----
 ```
 
