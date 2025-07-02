@@ -5,7 +5,7 @@
 
 - 👨‍💻 All of my projects are available at [https://hkl.ac.cn/](https://hkl.ac.cn/)
 
-- 📝 I regularly write articles on [https://xou.net/](https://xou.net/)
+- 📝 I regularly write articles on [https://szo.cc/](https://szo.cc/)
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
