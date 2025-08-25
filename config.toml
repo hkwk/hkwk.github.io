@@ -18,6 +18,15 @@ theme = "lighthouse100-theme"
   GABEIAN = " "
   hugoVersion = "0.147.7"
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)']]
+
 [permalinks]
   post = "/:year/:month/:slug/"
   pages = "/page/:contentbasename"
