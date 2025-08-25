@@ -25,8 +25,6 @@ title: OpenWRT搭建OpenVPN服务器
 
 那么现在开始吧，目前系统是使用了最新的OpenWRT 19.07.0-rc1, 同时适用于OpenWrt 18.06.4
 
-<!--more-->
-
 1.在OpenWRT安装并配置好OpenVPN
 
 先安装好本次所需的全部软件
@@ -212,7 +210,7 @@ easyrsa --batch build-client-full client1 nopass
 
 然后在`/etc/easy-rsa/pki/issued`找到`client1.crt`,在`/etc/easy-rsa/pki/private`找到`client1.key`
 
-将`client1.crt`的cert和`client1.key`的key替换ovpn文件中的<cert><key>段即可生成给第二位用户的ovpn文件
+将`client1.crt`的cert和`client1.key`的key替换ovpn文件中的`<cert>``<key>`段即可生成给第二位用户的ovpn文件
 
 单证书多用户模式：
 

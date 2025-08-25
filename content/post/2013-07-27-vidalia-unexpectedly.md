@@ -27,17 +27,11 @@ You probably got an error:看好了，大概就是这个样子吧！
 > Please check the message log for recent warning or error messages.
 
 
-<!--more-->
-
-
 在这之前。在终端机用以下命令关闭TOR ：
 
 ```bash
 sudo killall tor
 ```
-
- <!--more-->
-
 
 ### 第一步: 在终端机输入以下命令 ：
 

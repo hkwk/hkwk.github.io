@@ -1,7 +1,7 @@
 baseURL = "/"
 footnoteReturnLinkContents = "↩"
 title = "HKL's Notes"
-paginate = 10
+pagination.pagerSize = 10
 theme = "lighthouse100-theme"
 
 [params]
@@ -19,5 +19,5 @@ theme = "lighthouse100-theme"
 
 [permalinks]
   post = "/:year/:month/:slug/"
-  pages = "/page/:filename"
+  pages = "/page/:contentbasename"
 

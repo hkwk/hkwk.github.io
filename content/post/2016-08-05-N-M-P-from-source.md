@@ -20,20 +20,20 @@ updated: 2019/01/29 16:37:06
 
 过程
 
-**1.下载<a href="http://nginx.org/en/download.html">nginx-1.11.3</a>源码包并且编译。**
+**1.下载[nginx-1.11.3](http://nginx.org/en/download.html")源码包并且编译。**
 
 因为nginx HTTP rewrite module 需要PCRE包，同时其依赖的zlib本机也没有安装。所以一并下载源码包编译。
 
 其中遇到过一次错误，就是nginx依赖的是PCRE而不是PCRE2，在下载的时候需要区分清楚。
 
-PCRE和zlib编译安装过程比较简单，只需./configure好然后make &amp;&amp; make install即可。
+PCRE和zlib编译安装过程比较简单，只需./configure好然后make make install即可。
 
 然后可以进入nginx编译过程。
 
 在./configure时需要添加好参数 --with-pcre=PATH/TO/pcre  --with-zlib=PATH/TO/zlib
 
-执行make &amp;&amp; make install 编译安装
-<!--more-->
+执行make make install 编译安装
+
 因为没有设定路径，所以安装在/usr/local/nginx目录
 
 修改conf目录下的nginx.conf文件
@@ -60,11 +60,11 @@ iptables -I INPUT -p tcp --dport 80 -j ACCEPT
 
 MySQL的编译安装应该是最麻烦的一步，因为本机已经运行了一个mysqld实例，所以需要额外设定一些参数以避免冲突。
 
-首先，编译安装MySQL需要使用cmake，所以先编译安装好cmake，过程比较简单，不过要执行的是`./bootstrap` 而不是`./configure` `make`过程使用`gmake` &amp;&amp; `gmake install`
+首先，编译安装MySQL需要使用cmake，所以先编译安装好cmake，过程比较简单，不过要执行的是`./bootstrap` 而不是`./configure` `make`过程使用`gmake` `gmake install`
 
 然后编译安装好依赖包ncurses即可开始配置MySQL
 
-第一次编译安装的时候就是因为参数配置失误，使得安装之后执行mysql遇到了`"segmentation fault (core dumped)"`的问题。第一次是因为只设定了`<span class="pun">-</span><span class="pln">DDEFAULT_CHARSET</span><span class="pun">=</span><span class="pln">utf8mb4`而没有设定`DDEFAULT_COLLATION`参数，在`initialize`过程中遇到`"collation 'latin1_swedish_ci' is not valid for character set 'utf8mb4'"`错误，然后强行修改`my.cnf`文件之后`initialize`通过，能开启mysqld服务，但是客户端每次登录都会报错。</span>
+第一次编译安装的时候就是因为参数配置失误，使得安装之后执行mysql遇到了`"segmentation fault (core dumped)"`的问题。第一次是因为只设定了`<span class="pun">-</span><span class="pln">DDEFAULT_CHARSET</span><span class="pun">=</span><span class="pln">utf8mb4`而没有设定`DDEFAULT_COLLATION`参数，在`initialize`过程中遇到`"collation 'latin1_swedish_ci' is not valid for character set 'utf8mb4'"`错误，然后强行修改`my.cnf`文件之后`initialize`通过，能开启mysqld服务，但是客户端每次登录都会报错。
 
 所以第二次重装编译安装，将参数设定好。
 ```bash
@@ -98,16 +98,17 @@ define('DB_HOST', 'localhost:/usr/local/mysql5714/mysql57.sock');
 
 最终效果：本站
 
-&nbsp;
 
 参考：
 
-<a href="http://java-zone.org/1201.html">1.WordPress安装不使用MySQL数据库默认端口(MySQL默认端口3306)</a>
+[1.WordPress安装不使用MySQL数据库默认端口(MySQL默认端口3306)](http://java-zone.org/1201.html)
 
-<a href="https://www.insp.top/article/make-install-mysql-5-7">2.MySQL5.7 的编译安装</a>
+[2.MySQL5.7 的编译安装](https://www.insp.top/article/make-install-mysql-5-7)
 
-<a href="http://wptw.org/create-the-wordpress-database-and-user/">3.建立 MySQL 資料庫</a>
 
-<a href="http://www.tuicool.com/articles/jqIb22">4.lnmp（linux+nginx+mysql+php）源码安装</a>
+[3.建立 MySQL 資料庫](http://wptw.org/create-the-wordpress-database-and-user/)
+
+
+[4.lnmp（linux+nginx+mysql+php）源码安装](http://www.tuicool.com/articles/jqIb22)
 
 等等

@@ -27,8 +27,6 @@ Here are three main steps:
 
 So let's get started, the system is currently using the OpenWRT 19.07.0-rc1, which also applies to OpenWrt 18.06.4.
 
-<!--more-->
-
 1. Install OpenVPN in OpenWRT.
 
 First, install all the required packages
@@ -213,7 +211,7 @@ easyrsa --batch build-client-full client1 nopass
 
 Find `client1.crt` in `/etc/easy-rsa/pki/issued` , find `client1.key` in `/etc/easy-rsa/pki/private`
 
-Replace the cert of `client1.crt` and the key of `client1.key` with the <cert><key> segment of the ovpn file to generate the ovpn file for the second user.
+Replace the cert of `client1.crt` and the key of `client1.key` with the `<cert>``<key>` segment of the ovpn file to generate the ovpn file for the second user.
 
 Single certificate multi-user mode:
 
