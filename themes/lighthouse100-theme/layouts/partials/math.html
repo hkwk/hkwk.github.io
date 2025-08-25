@@ -1,10 +1,23 @@
-<script id="MathJax-script" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
+<script id="MathJax-script" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.0.0/tex-mml-chtml.min.js"></script>
 
 <script>
   MathJax = {
     tex: {
       displayMath: [['\\[', '\\]'], ['$$', '$$']],  // block
       inlineMath: [['\\(', '\\)']]                  // inline
+    },
+    options: {
+      a11y: {
+        speech: false,                      // switch on speech output
+        braille: false,                     // switch on Braille output
+        subtitles: false,                   // show speech as a subtitle
+        viewBraille: false,                // display Braille output as subtitles
+      },
+      menuOptions: {
+        settings:{
+          enrich: false
+        }
+      }
     }
   };
 </script>
