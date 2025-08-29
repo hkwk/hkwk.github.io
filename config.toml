@@ -15,7 +15,7 @@ theme = "lighthouse100-theme"
   LinkedinUser = "huangkl"
   CVurl = "https://hkl.ac.cn"
   MIITBEIAN = "粤ICP备13053581号-7"
-  GABEIAN = " "
+  GABEIAN = "粤公网安备44011302004954号"
   hugoVersion = "0.147.7"
 
 [markup]
