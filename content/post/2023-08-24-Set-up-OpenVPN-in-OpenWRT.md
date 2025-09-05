@@ -1,7 +1,7 @@
 ---
 author: HKL
 categories:
-- 默认分类
+- Default
 date: "2023-08-24T23:40:00Z"
 slug: Set-up-OpenVPN-in-OpenWRT
 status: publish

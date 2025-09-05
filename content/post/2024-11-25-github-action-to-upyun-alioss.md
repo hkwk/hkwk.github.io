@@ -1,7 +1,7 @@
 ---
 author: HKL
 categories:
-- 默认分类
+- Default
 date: "2024-11-25T13:21:00+08:00"
 slug: github-action-to-upyun-alioss
 status: publish

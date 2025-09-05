@@ -1,7 +1,7 @@
 ---
 author: HKL
 categories:
-- 默认分类
+- Default
 date: "2025-09-05T07:42:00Z"
 slug: install-alpine-on-existing-system
 status: publish
@@ -18,6 +18,7 @@ Operating the following In the Exsiting Linux System
 Install Alpine ON Existing Linux system without VNC
 
 ## Print the current Disk Partation table
+
 ```bash
 # lsblk
 NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
@@ -59,6 +60,7 @@ root@hkt:/mnt/alpine# sh genfstab -U /mnt/alpine >>/mnt/alpine/etc/fstab
 ```
 
 ## Mount the needed fake filesystems
+
 ```bash
 mount --types proc /proc /mnt/alpine/proc
 mount --rbind /sys /mnt/alpine/sys
@@ -76,6 +78,7 @@ EOF
 ```
 
 ##  Chroot and Setup Alpine
+
 ```bash
 chroot /mnt/alpine /bin/ash
 
