@@ -24,11 +24,11 @@ The exam is challenging. I decided to solve it with ChatGPT. And the final score
 
 And the answers offered by ChatGPT can review here:
 
-https://vnf.cc/cs/CEGAI.html
+/cs/CEGAI.html
 
 Another example is the Twilio Programmable Messaging and Voice Professional Certificate by vnf.cc and ChatGPT (score 80):
 
-https://vnf.cc/cs/TPMVP.html
+/cs/TPMVP.html
 
 
 [1]: https://cdn.jsdelivr.net/gh/hkwk/blog-photo/2023/07/20230728090844.png

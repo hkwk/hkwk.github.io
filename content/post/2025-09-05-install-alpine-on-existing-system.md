@@ -22,18 +22,15 @@ Install Alpine ON Existing Linux system without VNC
 ```bash
 # lsblk
 NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
-vda     253:0    0   30G  0 disk
-├─vda1  253:1    0 29.9G  0 part /
-├─vda14 253:14   0    4M  0 part
-└─vda15 253:15   0  106M  0 part /boot/efi
+sda     253:0    0   30G  0 disk
+├─sda1  253:1    0  106M 0 part /boot/efi
+└─sda2  253:2   0  29.9G  0 part /
 
 root@hkt:~# cat /etc/netplan/50-network.yaml
 # network-config
 network:
     version: 2
     ethernets:
-        lo:
-            addresses: [ '127.0.0.1/8' ]
         ens17:
             addresses: ['ip.add.re.ss/24']
             gateway4: ga.te.w.ay
@@ -44,24 +41,57 @@ network:
 ## Mount root
 
 ```bash
-root@hkt:~# mkdir -p /mnt/alpine
-root@hkt:~# mount /dev/vda1 /mnt/alpine
-root@hkt:~# mkdir -p /mnt/alpine/boot/efi
-root@hkt:~# mount /dev/vda15 /mnt/alpine/boot/efi
-root@hkt:~# cd /mnt/alpine
-root@hkt:/mnt/alpine#
-root@hkt:/mnt/alpine# wget https://dl-cdn.alpinelinux.org/alpine/v3.22/releases/x86_64/alpine-minirootfs-3.22.1-x86_64.tar.gz
+mkdir -p /tmp/alpine
+cd /tmp/alpine
+wget https://raw.githubusercontent.com/cemkeylan/genfstab/master/genfstab
+wget https://dl-cdn.alpinelinux.org/alpine/v3.22/releases/x86_64/alpine-minirootfs-3.22.1-x86_64.tar.gz
+tar xpf alpine-minirootfs-3.22.1-x86_64.tar.gz --xattrs-include='*.*' --numeric-owner
 
-root@hkt:/mnt/alpine# tar xpf alpine-minirootfs-3.22.1-x86_64.tar.gz --xattrs-include='*.*' --numeric-owner
 
-root@hkt:/mnt/alpine# wget https://raw.githubusercontent.com/cemkeylan/genfstab/master/genfstab
-
-root@hkt:/mnt/alpine# sh genfstab -U /mnt/alpine >>/mnt/alpine/etc/fstab
 ```
 
 ## Mount the needed fake filesystems
 
 ```bash
+mount --types proc /proc /tmp/alpine/proc
+mount --rbind /sys /tmp/alpine/sys
+mount --make-rslave /tmp/alpine/sys
+mount --rbind /dev /tmp/alpine/dev
+mount --make-rslave /tmp/alpine/dev
+mount --bind /run /tmp/alpine/run
+mount --make-slave /tmp/alpine/run
+test -L /dev/shm && rm /dev/shm && mkdir /dev/shm
+mount --types tmpfs --options nosuid,nodev,noexec shm /dev/shm
+chmod 1777 /dev/shm /run/shm
+
+```
+
+##  1st Chroot and Setup Virtual System
+
+```bash
+chroot /tmp/alpine/ /bin/ash
+
+export PS1='root@alpine-chroot-1 # '
+
+tee /etc/resolv.conf <<EOF
+nameserver 1.1.1.1
+EOF
+
+apk update
+apk add tar mount
+
+mkdir /mnt/alpine
+mount /dev/sda2 /mnt/alpine
+mkdir /mnt/alpine/boot/efi
+mount /dev/sda1 /mnt/alpine/boot/efi
+
+cp /genfstab /mnt/alpine
+cp /alpine-minirootfs-3.22.1-x86_64.tar.gz /mnt/alpine
+
+cd /mnt/alpine
+rm -rf bin home etc lib  lib64 opt root sbin srv usr var
+tar xpvf alpine-minirootfs-3.22.1-x86_64.tar.gz --xattrs-include='*.*' --numeric-owner
+
 mount --types proc /proc /mnt/alpine/proc
 mount --rbind /sys /mnt/alpine/sys
 mount --make-rslave /mnt/alpine/sys
@@ -69,29 +99,42 @@ mount --rbind /dev /mnt/alpine/dev
 mount --make-rslave /mnt/alpine/dev
 mount --bind /run /mnt/alpine/run
 mount --make-slave /mnt/alpine/run
-
-
-tee /mnt/alpine/etc/resolv.conf <<EOF
-nameserver 1.1.1.1
-nameserver 8.8.8.8
-EOF
+test -L /dev/shm && rm /dev/shm && mkdir /dev/shm
+mount --types tmpfs --options nosuid,nodev,noexec shm /dev/shm
+chmod 1777 /dev/shm /run/shm
 ```
 
-##  Chroot and Setup Alpine
+##  2nd Chroot and Setup Real Alpine System
 
 ```bash
-chroot /mnt/alpine /bin/ash
+chroot /mnt/alpine/ /bin/ash
 
+export PS1='root@alpine-chroot-2 # '
 export PATH='/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+mkdir /lib/modules
+
+tee /etc/resolv.conf <<EOF
+nameserver 1.1.1.1
+EOF
+
 apk update
 apk add alpine-conf openrc e2fsprogs --no-cache
 
 setup-alpine
 
-apk add grub grub-efi efibootmgr linux-lts	
+# Which NTP client to run? ('busybox', 'openntpd', 'chrony' or 'none') [busybox] chrony
+# Allow root ssh login? ('?' for help) [prohibit-password] yes
+# Which disk(s) would you like to use? (or '?' for help or 'none') [none]
 
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=ALPINE --no-nvram
+apk add grub grub-efi efibootmgr linux-lts
+
+sh /genfstab -U / >> /etc/fstab
+
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=ALPINE
 grub-mkconfig -o /boot/grub/grub.cfg
+
+echo 'GRUB_CMDLINE_LINUX="console=ttyS0,19200n8 net.ifnames=0 modules=sd-mod,usb-storage,ext4 quiet rootfstype=ext4"' >> /etc/default/grub
+update-grub
 
 rc-update add hostname boot
 rc-update add devfs sysinit
@@ -106,10 +149,9 @@ rc-update add swap boot
 rc-update add sysfs sysinit
 rc-update add localmount boot
 rc-update add sysctl boot
-rc-update add ssh boot
-
-reboot
+rc-update add sshd boot
 ```
+
 
 #### Enjoying Alpine!
 
@@ -120,3 +162,5 @@ refer:
 2.[How to manually install alpine linux on any linux distribution](https://blog.ari.lt/b/how-to-manually-install-alpine-linux-on-any-linux-distribution/)
 
 3.[Replacing non-Alpine Linux with Alpine remotely](https://wiki.alpinelinux.org/wiki/Replacing_non-Alpine_Linux_with_Alpine_remotely#Without_VNC_access)
+
+4.[ Booting issues after upgrade (mounting /dev/sda on /sysroot failed)](https://www.reddit.com/r/AlpineLinux/comments/m99ksm/booting_issues_after_upgrade_mounting_devsda_on/)

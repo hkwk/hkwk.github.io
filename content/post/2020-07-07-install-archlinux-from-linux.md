@@ -15,8 +15,6 @@ title: 从现有Linux系统上安装Archlinux
 
 以Oracle Cloud环境为例,启用一个Oracle Linux 7.8的实例,opc登陆系统,`sudo -i`切换为root用户。继续后续操作：
 
-<!--more-->
-
 
 原系统
 
