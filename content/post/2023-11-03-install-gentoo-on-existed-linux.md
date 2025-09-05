@@ -17,9 +17,8 @@ title: Install Gentoo ON Existed Linux without VNC
 
 Install Gentoo ON Exsit Linux without VNC
 
-<!--more-->
 
-```
+```bash
 # Download and move the Gentoo stage3 tar package to /tmp (Exsiting Linux Distribution).
 root@ali:/tmp/stage3# cp /root/stage3-amd64-systemd-20231029T164701Z.tar.xz .
 
@@ -65,7 +64,7 @@ root@gentoo-chroot-1 #
 ```
 
 ### Operating the following In 1st chroot environment
-```
+```bash
 ali / # export PS1='root@gentoo-chroot-1 # '
 root@gentoo-chroot-1 #env-update 
 !!! Section 'gentoo' in repos.conf has location attribute set to nonexistent directory: '/var/db/repos/gentoo'
@@ -96,7 +95,7 @@ mount: /mnt/gentoo: mount point does not exist.
 
 Actually, From the step, you can follow the [Gentoo's Handbook](https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Base) to install the System !
  
-```
+```bash
 root@gentoo-chroot-1 # mkdir /mnt/gentoo
 root@gentoo-chroot-1 # mount /dev/vda3 /mnt/gentoo
 
@@ -173,7 +172,7 @@ root@gentoo-chroot-1 #
 
 #### Now CAN chroot to the New Gentoo System  !
 
-```
+```bash
 chroot /mnt/gentoo/ /bin/bash  
 source /etc/profile  
 ali / # eselect profile list
@@ -259,7 +258,7 @@ ali ~/.ssh # Connection closing...Socket close.
 
 #### After rebooting the system, expectedly can boot the the New Gentoo System!
 
-```
+```bash
 Connection established.
 To escape to local shell, press 'Ctrl+Alt+]'.
 
@@ -307,6 +306,6 @@ refer:
 
 1.[Gentoo's Handbook](https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Base)
 
-2.[ 从现有Linux系统上安装Archlinux ](https://vnf.cc/2020/07/install-archlinux-from-linux/)
+2.[ 从现有Linux系统上安装Archlinux ](/2020/07/install-archlinux-from-linux/)
 
 3.[Quick Gentoo Setup](https://gtrush.com/2022/06/12/%E6%96%B0%E6%89%8BGentoo%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%951-%E5%AE%89%E8%A3%85%E7%AF%87-%E4%BA%8C%E8%BF%9B%E5%88%B6kernel%E5%BF%AB%E9%80%9F%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95/)
