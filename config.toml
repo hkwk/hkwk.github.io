@@ -3,6 +3,7 @@ footnoteReturnLinkContents = "↩"
 title = "HKL's Notes"
 pagination.pagerSize = 10
 theme = "lighthouse100-theme"
+languageCode = "zh-CN"
 
 [params]
   AuthorName = "Kunlun HUANG"
