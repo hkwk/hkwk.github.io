@@ -7,6 +7,7 @@ slug: autoscript-for-ccopy-submit
 status: publish
 tags:
 - Software
+- Copyright
 title: 国家版权登记业务中心软著提交自动化
 ---
 
@@ -16,7 +17,7 @@ title: 国家版权登记业务中心软著提交自动化
 
 在软著登记过程中，遇到“当前提交人数过多，系统繁忙，请稍后重新提交”的提示是较为常见的现象，这通常是由于版权登记登记登记业务中心系统处理能力有限或同时提交申请的人数过多导致的。针对这一问题，以下提供一份详尽且条理清晰的处理指南。
 
-```javascript
+```js
 class AutoClicker {
      constructor() { 
         this.intervalId = null; 
@@ -97,4 +98,4 @@ clicker.stop(); // 如果需要重新启动并修
 ```
 
 
-把上述代码粘贴到console，直接回车
+把上述代码粘贴到console，直接回车。
