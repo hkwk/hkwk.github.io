@@ -6,8 +6,7 @@ date: "2025-11-26T12:42:00Z"
 slug: autoscript-for-ccopy-submit
 status: publish
 tags:
-- Linux
-- Operating
+- Software
 title: 国家版权登记业务中心软著提交自动化
 ---
 
