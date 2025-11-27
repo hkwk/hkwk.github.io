@@ -186,7 +186,7 @@ OpenWrt*CLI> pjsip show endpoints
         Aor:  6001                                               1
       Contact:  6001/sip:6001@192.168.234.127:53117;transp 378e2db08b NonQual         nan
   Transport:  transport-udp             udp      0      0  0.0.0.0:5060
-    Channel: PJSIP/6001-00000005/AppDial                         Up            00:00:04   
+    Channel: PJSIP/6001-00000005/AppDial                         Up            00:00:04
         Exten:                           CLCID: "6004" <6004>
 
  Endpoint:  6002                                                 Unavailable   0 of inf
@@ -205,7 +205,7 @@ OpenWrt*CLI> pjsip show endpoints
         Aor:  6004                                               1
       Contact:  6004/sip:6004@192.168.104.11:5060          586381001a NonQual         nan
   Transport:  transport-udp             udp      0      0  0.0.0.0:5060
-    Channel: PJSIP/6004-00000004/Dial                            Up            00:00:04   
+    Channel: PJSIP/6004-00000004/Dial                            Up            00:00:04
         Exten: 6001                      CLCID: "" <6001>
 
 
@@ -240,5 +240,3 @@ exten => +862022221234,1,Dial(IAX2/6010,60,Trg)
 ![Outgoing Test 1](https://cdn.jsdelivr.net/gh/hkwk/blog-photo/2019/11/r6wjvf9s6k.png)
 
 ![Outgoing Test 2](https://cdn.jsdelivr.net/gh/hkwk/blog-photo/2019/11/jek9b1pyhn.jpeg)
-
-
