@@ -2,7 +2,7 @@
 author: HKL
 categories:
 - Default
-date: "2025-11-27T12:42:00Z"
+date: "2025-11-26T12:42:00Z"
 slug: autoscript-for-ccopy-submit
 status: publish
 tags:
