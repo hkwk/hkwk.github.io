@@ -2,9 +2,9 @@
 author: HKL
 categories:
 - Default
-date: "2025-12-27T10:22:00Z"
+date: "2025-12-27T10:51:00+08:00"
 slug: windows-gnu-ccsds-aec-fix
-status: publish
+draft: false
 tags:
 - Programming
 - Rust
