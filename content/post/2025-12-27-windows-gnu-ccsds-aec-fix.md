@@ -3,13 +3,15 @@ author: HKL
 categories:
 - Default
 date: "2025-12-27T10:22:00Z"
-slug: autoscript-for-ccopy-submit
+slug: windows-gnu-ccsds-aec-fix
 status: publish
 tags:
 - Programming
 - Rust
-title: indows (x86_64-pc-windows-gnu) 上启用 GRIB2 5.0=42 (CCSDS/AEC) 解码的修复记录
+title: Windows (x86_64-pc-windows-gnu) 上启用 GRIB2 5.0=42 (CCSDS/AEC) 解码的修复记录
 ---
+
+# Windows (x86_64-pc-windows-gnu) 上启用 GRIB2 5.0=42 (CCSDS/AEC) 解码的修复记录
 
 ## 背景
 
