@@ -106,3 +106,4 @@ title: Windows (x86_64-pc-windows-gnu) 上启用 GRIB2 5.0=42 (CCSDS/AEC) 解码
 
 - 尽量保持 `cmake` / `gcc` / `make` / `clang` 来自同一套 MSYS2 UCRT64 环境。
 - 避免 PATH 中 Conda/System32 的 zlib/libzstd 等 DLL 抢先被加载导致崩溃或 LoadLibraryExW 失败。
+- 后期正在考虑使用rust重写一下 `libaec` 模块
