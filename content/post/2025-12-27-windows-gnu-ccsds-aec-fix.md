@@ -38,7 +38,7 @@ title: Windows (x86_64-pc-windows-gnu) 上启用 GRIB2 5.0=42 (CCSDS/AEC) 解码
 
 ## 根因定位（关键点）
 
-### 1) `libclang.dll` 能找到，但加载失败
+### 1. `libclang.dll` 能找到，但加载失败
 
 即使 `LIBCLANG_PATH=C:\msys64\ucrt64\bin` 且该目录存在 `libclang.dll`，仍可能加载失败。
 
@@ -53,7 +53,7 @@ title: Windows (x86_64-pc-windows-gnu) 上启用 GRIB2 5.0=42 (CCSDS/AEC) 解码
 
 这说明是“依赖 DLL 搜索路径/顺序”问题。
 
-### 2) `libaec-sys` 在 windows-gnu 上链接库名错误
+### 2. `libaec-sys` 在 windows-gnu 上链接库名错误
 
 `libaec-sys` 原始 build script 在 Windows 直接链接 `aec-static`（更像 MSVC 产物名），
 但在 MinGW/MSYS2 下实际安装产物是 `libaec.a`（应当链接为 `aec`）。
@@ -64,7 +64,7 @@ title: Windows (x86_64-pc-windows-gnu) 上启用 GRIB2 5.0=42 (CCSDS/AEC) 解码
 
 ## 代码级修复
 
-### A) 修复 clang-sys 加载方式（解决 libclang 加载失败）
+### A. 修复 clang-sys 加载方式（解决 libclang 加载失败）
 
 做法：在 Windows 下，加载 `libclang.dll` 时改用 `LOAD_WITH_ALTERED_SEARCH_PATH`，
 使依赖 DLL 更倾向于从 `libclang.dll` 所在目录解析。
@@ -77,7 +77,7 @@ title: Windows (x86_64-pc-windows-gnu) 上启用 GRIB2 5.0=42 (CCSDS/AEC) 解码
 
 - `[patch.crates-io] clang-sys = { path = "vendor/clang-sys-1.8.1" }`
 
-### B) 修复 libaec-sys 在 windows-gnu 的链接名（解决 aec-static 缺失）
+### B. 修复 libaec-sys 在 windows-gnu 的链接名（解决 aec-static 缺失）
 
 做法：根据 `CARGO_CFG_TARGET_ENV` 区分：
 
