@@ -11,8 +11,6 @@ tags:
 title: Windows (x86_64-pc-windows-gnu) 上启用 GRIB2 5.0=42 (CCSDS/AEC) 解码的修复记录
 ---
 
-# Windows (x86_64-pc-windows-gnu) 上启用 GRIB2 5.0=42 (CCSDS/AEC) 解码的修复记录
-
 ## 背景
 
 我们的 GRIB2 预览工具/GUI 使用 Rust 的 `grib` crate 解析并解码 GRIB2。
@@ -106,4 +104,4 @@ title: Windows (x86_64-pc-windows-gnu) 上启用 GRIB2 5.0=42 (CCSDS/AEC) 解码
 
 - 尽量保持 `cmake` / `gcc` / `make` / `clang` 来自同一套 MSYS2 UCRT64 环境。
 - 避免 PATH 中 Conda/System32 的 zlib/libzstd 等 DLL 抢先被加载导致崩溃或 LoadLibraryExW 失败。
-- 后期正在考虑使用rust重写一下 `libaec` 模块
+- 后期正在考虑使用rust重写一下 `libaec` 模块 (已经完成。详见：[https://crates.io/crates/rust-aec](https://crates.io/crates/rust-aec)以及[/rust-aec-handoff-notes](/2025/12/rust-aec-handoff-notes/))
