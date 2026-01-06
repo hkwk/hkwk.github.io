@@ -1,19 +1,19 @@
 <script>
-  // 根据域名动态选择MathJax CDN
+  // auto select MathJax CDN according to the domain
   const currentDomain = window.location.hostname;
   const isXouNet = /(^|\.)xou\.net$/.test(currentDomain);
   const mathJaxUrl = isXouNet 
     ? 'https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js'
     : 'https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js';
   
-  // 创建并插入MathJax脚本标签
+  // create and append the MathJax script tag
   const script = document.createElement('script');
   script.id = 'MathJax-script';
   script.src = mathJaxUrl;
   script.async = true;
   document.head.appendChild(script);
   
-  // MathJax配置保持不变
+  // MathJax configuration remains unchanged
   MathJax = {
     tex: {
       displayMath: [['\\[', '\\]'], ['$$', '$$']],  // block
