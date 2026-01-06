@@ -1,10 +1,10 @@
 <script>
   // 根据域名动态选择MathJax CDN
   const currentDomain = window.location.hostname;
-  const isXouNet = /\.xou\.net$/.test(currentDomain);
+  const isXouNet = /(^|\.)xou\.net$/.test(currentDomain);
   const mathJaxUrl = isXouNet 
-    ? 'https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/mathjax/4.0.0/tex-mml-chtml.min.js'
-    : 'https://gcore.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js';
+    ? 'https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js'
+    : 'https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js';
   
   // 创建并插入MathJax脚本标签
   const script = document.createElement('script');
