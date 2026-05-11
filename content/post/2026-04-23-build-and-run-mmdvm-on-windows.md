@@ -347,7 +347,7 @@ Copy runtime DLLs from:
 
 # Download Ready-to-Use Package
 
-👉 [http://qsl.net/bg7kuh/MMDVMHost&DRMGateway(2026-04).zip](http://qsl.net/bg7kuh/MMDVMHost&DRMGateway%282026-04%29.zip)
+👉 [http://qsl.net/bg7kuh/mmdvmhost.html](http://qsl.net/bg7kuh/mmdvmhost.html)
 
 ---
 
