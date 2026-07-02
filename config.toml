@@ -11,12 +11,12 @@ languageCode = "zh-CN"
   SidebarRecentLimit = 5
   Subtitle = "Just record things."
   Comments = "Cares"
-  homepageurl = "https://xou.net/"
+  homepageurl = "https://pdok.cn/"
   IssueURL = "https://github.com/hkwk/hkwk.github.io/issues"
   LinkedinUser = "huangkl"
   CVurl = "https://hkl.ac.cn"
-  MIITBEIAN = "粤ICP备13053581号-7"
-  GABEIAN = "粤公网安备44011302004954号"
+  MIITBEIAN = "粤ICP备13053581号-8"
+  GABEIAN = ""
   hugoVersion = "0.147.7"
 
 [markup]
