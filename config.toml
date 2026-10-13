@@ -16,7 +16,7 @@ languageCode = "zh-CN"
   LinkedinUser = "huangkl"
   CVurl = "https://hkl.ac.cn"
   MIITBEIAN = "粤ICP备13053581号-8"
-  GABEIAN = ""
+  GABEIAN = "粤公网安备44011302005647号"
   hugoVersion = "0.147.7"
 
 [markup]
